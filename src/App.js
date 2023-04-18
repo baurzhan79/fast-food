@@ -1,5 +1,7 @@
 import './App.css';
+import React, { useState } from 'react';
 import ItemsList from './components/ItemsList/ItemsList';
+import OrderDetails from './components/OrderDetails/OrderDetails';
 
 function App() {
   const items = [
@@ -11,8 +13,37 @@ function App() {
     { name: "Tea", price: 80, iconSrc: "./icons/icon-tea.png" }
   ];
 
+  const [orderDetails, setOrderDetails] = useState([]);
+
   const addNewItem = (item) => {
     console.log("item", item);
+
+    const filteredArray = orderDetails.filter(orderDetail => {
+      return orderDetail["name"] === item.name;
+    });
+
+    const orderDetailsCopy = [...orderDetails];
+
+    if (filteredArray.length === 0) {
+      const DateInMilliseconds = new Date().getTime();
+      const newOrderDetail = {
+        id: DateInMilliseconds,
+        name: item.name,
+        price: item.price,
+        quantity: 1
+      }
+      orderDetailsCopy.push(newOrderDetail);
+    }
+    else { // filteredArray.length === 1
+
+      for (let i = 0; i < orderDetails.length; i++) {
+        if (orderDetails[i].name === item.name) {
+          orderDetailsCopy[i].quantity++;
+        }
+      }
+    }
+
+    setOrderDetails(orderDetailsCopy);
   }
 
   return (
@@ -20,6 +51,9 @@ function App() {
       <ItemsList
         itemsList={items}
         onAddItem={(item) => addNewItem(item)}
+      />
+      <OrderDetails
+        orderDetails={orderDetails}
       />
     </div >
   );

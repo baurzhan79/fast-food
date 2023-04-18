@@ -1,4 +1,4 @@
-.Item-btn {
+.Item-Btn {
     outline: none;
     cursor: pointer;
     user-select: none;
@@ -14,25 +14,25 @@
     background-color: #195ABB;
 }
 
-.Item-btn:active {
+.Item-Btn:active {
     background-color: deepskyblue;
     color: #195ABB;
     border: 1px solid #195ABB;
 }
 
-.Item-spanBox {
+.Item-SpanBox {
     display: flex;
     flex-direction: column;
     background-position: center top;
     background-repeat: no-repeat;
 }
 
-.Item-spanBox::before {
+.Item-SpanBox::before {
     content: "";
     width: 30px;
     height: 30px;
 }
 
-.Item-span {
+.Item-Span {
     margin: 5px 0;
 }

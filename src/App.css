@@ -1,9 +1,10 @@
 .App {
   text-align: center;
-  /* border: 1px solid steelblue; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .App-logo {

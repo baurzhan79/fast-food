@@ -7,10 +7,10 @@ const Item = props => {
     };
 
     return (
-        <button className="Item-btn" onClick={props.onAddItem}>
-            <span className="Item-spanBox" style={iconStyle}>
-                <span className="Item-span">{props.item.name}</span>
-                <span className="Item-span">Price: {props.item.price} KZT</span>
+        <button className="Item-Btn" onClick={props.onAddItem}>
+            <span className="Item-SpanBox" style={iconStyle}>
+                <span className="Item-Span">{props.item.name}</span>
+                <span className="Item-Span">Price: {props.item.price} KZT</span>
             </span>
         </button >
     );
