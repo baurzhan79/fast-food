@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemsList from './components/ItemsList/ItemsList';
 import OrderDetails from './components/OrderDetails/OrderDetails';
 
@@ -14,6 +14,16 @@ function App() {
   ];
 
   const [orderDetails, setOrderDetails] = useState([]);
+  const [totalSum, setTotalSum] = useState(0);
+
+  useEffect(() => {
+    let total = orderDetails.reduce((sum, currentItem) => {
+      return sum + (currentItem.price * currentItem.quantity);
+    }, 0);
+
+    total = parseFloat(total.toFixed(2));
+    setTotalSum(total);
+  }, [orderDetails])
 
   const addNewItem = (item) => {
     const filteredArray = orderDetails.filter(orderDetail => {
@@ -40,6 +50,18 @@ function App() {
     setOrderDetails(orderDetailsCopy);
   }
 
+  const removeItem = id => {
+    const index = orderDetails.findIndex(p => p.id === id);
+    const orderDetailsCopy = [...orderDetails];
+    if (orderDetailsCopy[index].quantity > 1) {
+      orderDetailsCopy[index].quantity--;
+    }
+    else {
+      orderDetailsCopy.splice(index, 1);
+    }
+    setOrderDetails(orderDetailsCopy);
+  }
+
   return (
     <div className="App">
       <ItemsList
@@ -48,6 +70,8 @@ function App() {
       />
       <OrderDetails
         orderDetails={orderDetails}
+        totalSum={totalSum}
+        onRemoveItem={(id) => removeItem(id)}
       />
     </div >
   );

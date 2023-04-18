@@ -24,9 +24,14 @@ const OrderDetails = props => {
                                 <OrderDetail
                                     key={item.id}
                                     item={item}
+                                    onRemoveItem={() => props.onRemoveItem(item.id)}
                                 />);
                         })
                     }
+                </div>
+                <div className="OrderDetails-total">
+                    <p className="ItemsList-bold">Total sum:</p>
+                    <p className="ItemsList-bold">{props.totalSum} KZT</p>
                 </div>
             </div>
         );

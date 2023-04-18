@@ -20,3 +20,24 @@
 .OrderDetail-price {
   flex-basis: 50%;
 }
+
+.OrderDetail-btn {
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0;
+
+  width: 40px;
+  height: 20px;
+  font-size: 16px;
+  color: white;
+  background: lightslategray;
+}
+
+.OrderDetail-btn:active {
+  background: inherit;
+  color: lightslategray;
+  border: 1px solid lightslategray;
+}

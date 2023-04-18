@@ -9,6 +9,7 @@ const OrderDetail = props => {
                 <span>x {props.item.quantity}</span>
             </div>
             <span className="OrderDetail-price">{props.item.price} KZT</span>
+            <button className="OrderDetail-btn" onClick={props.onRemoveItem}>X</button>
         </div>
     );
 };
