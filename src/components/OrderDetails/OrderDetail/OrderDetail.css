@@ -1,0 +1,22 @@
+.OrderDetail-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.OrderDetail-name-quantity {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 30px;
+}
+
+.OrderDetail-name {
+  margin-right: 30px;
+}
+
+.OrderDetail-price {
+  flex-basis: 50%;
+}

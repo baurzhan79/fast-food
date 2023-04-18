@@ -1,16 +1,16 @@
-.OrderDetails-Box {
+.OrderDetails-box {
     border: 1px solid black;
     max-width: 400px;
     width: 100%;
     margin: 10px;
 }
 
-.OrderDetails-Bold {
+.OrderDetails-bold {
     font-weight: bold;
     text-align: center;
 }
 
-.OrderDetails-TextBox {
+.OrderDetails-text-box {
     margin-top: 30px;
     text-align: center;
 }

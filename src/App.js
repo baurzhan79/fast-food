@@ -16,8 +16,6 @@ function App() {
   const [orderDetails, setOrderDetails] = useState([]);
 
   const addNewItem = (item) => {
-    console.log("item", item);
-
     const filteredArray = orderDetails.filter(orderDetail => {
       return orderDetail["name"] === item.name;
     });
@@ -35,12 +33,8 @@ function App() {
       orderDetailsCopy.push(newOrderDetail);
     }
     else { // filteredArray.length === 1
-
-      for (let i = 0; i < orderDetails.length; i++) {
-        if (orderDetails[i].name === item.name) {
-          orderDetailsCopy[i].quantity++;
-        }
-      }
+      const index = orderDetailsCopy.findIndex(p => p.id === filteredArray[0].id);
+      orderDetailsCopy[index].quantity++;
     }
 
     setOrderDetails(orderDetailsCopy);

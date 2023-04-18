@@ -4,9 +4,9 @@ import Item from "./Item/Item";
 
 const ItemsList = props => {
     return (
-        <div className="ItemsList-Box">
-            <p className="ItemsList-Bold">Add items</p>
-            <div className="ItemsList-Buttons">
+        <div className="ItemsList-box">
+            <p className="ItemsList-bold">Add items</p>
+            <div className="ItemsList-buttons">
                 {
                     props.itemsList.map((item, index) => {
                         return (<Item
