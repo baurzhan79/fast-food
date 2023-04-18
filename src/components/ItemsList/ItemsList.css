@@ -1,0 +1,17 @@
+.ItemsList-Box {
+    border: 1px solid black;
+    max-width: 400px;
+    width: 100%;
+    margin: 10px;
+}
+
+.ItemsList-Bold {
+    font-weight: bold;
+    text-align: center;
+}
+
+.ItemsList-Buttons {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

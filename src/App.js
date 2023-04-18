@@ -1,5 +1,5 @@
 import './App.css';
-import Item from './components/Item/Item';
+import ItemsList from './components/ItemsList/ItemsList';
 
 function App() {
   const items = [
@@ -17,15 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      {
-        items.map((item, index) => {
-          return (<Item
-            key={index}
-            item={item}
-            onAddItem={() => addNewItem(item)}
-          />);
-        })
-      }
+      <ItemsList
+        itemsList={items}
+        onAddItem={(item) => addNewItem(item)}
+      />
     </div >
   );
 }
