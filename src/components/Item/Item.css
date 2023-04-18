@@ -1,0 +1,38 @@
+.Item-btn {
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 0;
+
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #195ABB;
+}
+
+.Item-btn:active {
+    background-color: deepskyblue;
+    color: #195ABB;
+    border: 1px solid #195ABB;
+}
+
+.Item-spanBox {
+    display: flex;
+    flex-direction: column;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.Item-spanBox::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+}
+
+.Item-span {
+    margin: 5px 0;
+}
